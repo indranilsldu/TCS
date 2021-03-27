@@ -1,0 +1,32 @@
+import java.util.*;
+public class SweetSeventeen
+{
+     public static void main(String []args)
+     {
+        Scanner scan = new Scanner(System.in);
+        String number = scan.next();
+        int c=0,result=0;
+        for(int i=number.length()-1;i>=0;i--)
+        {
+            char con = number.charAt(i);
+            if(con=='A' || con=='a')
+                result = result+10*(int)(Math.pow(17,c));
+            else if(con=='B' || con=='b')
+                result = result+11*(int)(Math.pow(17,c));
+            else if(con=='C' || con=='c')
+                result = result+12*(int)(Math.pow(17,c));
+            else if(con=='D' || con=='d')
+                result = result+13*(int)(Math.pow(17,c));
+            else if(con=='E' || con=='e')
+                result = result+14*(int)Math.pow(17,c);
+            else if(con=='F' || con=='f')
+                result = result+15*(int)(Math.pow(17,c));
+            else if(con=='G' || con=='g')
+                result = result+16*(int)(Math.pow(17,c));
+            else
+                result = result+(int)number.charAt(i)-48*(int)(Math.pow(17,c));
+            c++;
+        }
+        System.out.println(result);
+     }
+}
