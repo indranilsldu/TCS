@@ -5,26 +5,15 @@ public class SweetSeventeen
      {
         Scanner scan = new Scanner(System.in);
         String number = scan.next();
+        number = number.toUpperCase();
         int c=0,result=0;
         for(int i=number.length()-1;i>=0;i--)
         {
             char con = number.charAt(i);
-            if(con=='A' || con=='a')
-                result = result+10*(int)(Math.pow(17,c));
-            else if(con=='B' || con=='b')
-                result = result+11*(int)(Math.pow(17,c));
-            else if(con=='C' || con=='c')
-                result = result+12*(int)(Math.pow(17,c));
-            else if(con=='D' || con=='d')
-                result = result+13*(int)(Math.pow(17,c));
-            else if(con=='E' || con=='e')
-                result = result+14*(int)Math.pow(17,c);
-            else if(con=='F' || con=='f')
-                result = result+15*(int)(Math.pow(17,c));
-            else if(con=='G' || con=='g')
-                result = result+16*(int)(Math.pow(17,c));
+            if(con>='A' && con<='G')
+                result = result+((int)con-55)*(int)(Math.pow(17,c));
             else
-                result = result+(int)number.charAt(i)-48*(int)(Math.pow(17,c));
+                result = result+((int)number.charAt(i)-48)*(int)(Math.pow(17,c));
             c++;
         }
         System.out.println(result);
