@@ -1,0 +1,24 @@
+import java.util.*;
+public class StringPermutation
+{
+     public static void main(String []args)
+     {
+        Scanner scan = new Scanner(System.in);
+        String word = scan.next();
+        int len = word.length();
+        int i,j,k;
+        for(i=0;i<len;i++)
+        {
+            for(j=0;j<len;j++)
+            {
+                for(k=0;k<len;k++)
+                {
+                    if(i!=j && j!=k && k!=i)
+                    {
+                        System.out.println(word.charAt(i)+""+word.charAt(j)+""+word.charAt(k));
+                    }
+                }
+            }
+        }
+     }
+}
