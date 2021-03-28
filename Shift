@@ -1,1 +1,18 @@
 
+import java.util.*;
+public class OddlyEven
+{
+     public static void main(String []args)
+     {
+        Scanner scan = new Scanner(System.in);
+        String word = scan.next();
+        String backward = "", forward = "";
+        int len = word.length()
+        backward = word.substring(1,len)+len.charAt(0);
+        forward = len.charAt(len-1)+word.substring(0,len-1);
+        if(backward.equals(forward))
+            System.out.println(1);
+        else
+            System.out.println(0);
+     }
+}
