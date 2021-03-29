@@ -1,0 +1,41 @@
+import java.util.*;
+public class Pangram
+{
+     public static void main(String []args)
+     {
+        Scanner scan = new Scanner(System.in);
+        String line = scan.nextLine();
+        line = line.trim();
+        line = line.toUpperCase();
+        String word = "", sortedWord = "";
+        int len = line.length();
+        int i,j,c=0;
+        for(i=0;i<len;i++)
+        {
+            word = word+line.charAt(i);
+        }
+        for(i=65;i<=90;i++)
+        {
+            for(j=0;j<len;j++)
+            {
+                if((char)i==word.charAt(j))
+                {
+                    sortedWord = sortedWord+word.charAt(j);
+                }
+            }
+        }
+        len = sortedWord.length();
+        sortedWord = sortedWord+" ";
+        for(i=0;i<len;i++)
+        {
+            if(sortedWord.charAt(i)==sortedWord.charAt(i+1))
+                continue;
+            else
+                c++;
+        }
+        if(c==26)
+            System.out.println("The string is pangram");
+        else
+            System.out.println("The string is not pangram");
+     }
+}
