@@ -1,0 +1,22 @@
+import java.util.*;
+public class NumberSeries2
+{
+     public static void main(String []args)
+     {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the  nth term");
+        int number = scan.nextInt();
+        int i,a=1,b=1;
+        for(i=1;i<=number;i++)
+        {
+            if(i%2==0)
+                a = a*3;
+            else
+                b = b*2;
+        }
+        if(number%2==0)
+                System.out.println(a/3);
+            else
+                System.out.println(b/2);
+     }
+}
