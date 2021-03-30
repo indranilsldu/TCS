@@ -1,0 +1,29 @@
+import java.util.*;
+public class NumberInString
+{
+     public static void main(String []args)
+     {
+        Scanner scan = new Scanner(System.in);
+        int flag = 0;
+        while(scan.hasNext())
+        {
+            if(scan.hasNextLong())
+            {
+                flag = 0;
+                String check = scan.next();
+                for(int i=0;i<check.length();i++)
+                {
+                    if(check.charAt(i)=='9')
+                        flag = 1;
+                }
+                if(flag==0)
+                    System.out.println(check);
+            }
+            else
+            {
+                scan.next();
+            }
+        }
+        scan.close();
+     }
+}
