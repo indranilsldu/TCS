@@ -31,6 +31,7 @@ public class SieveOfErastothenes
                 System.out.print(arr[i]+" ");
             }
         }
+        System.out.println("\nPrime number count in the given range is: ");
         System.out.println(count);
      }
 }
