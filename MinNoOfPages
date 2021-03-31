@@ -1,0 +1,14 @@
+import java.util.*;
+public class MinNoOfPages
+{
+     public static void main(String []args)
+     {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the number of pages of book");
+        int n = scan.nextInt();
+        scan.nextLine();
+        System.out.println("Enter the page number to turn to");
+        int p = scan.nextInt();
+        System.out.println(Math.min(p/2,n/2-p/2));
+     }
+}
