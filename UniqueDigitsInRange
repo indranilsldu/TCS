@@ -1,0 +1,27 @@
+import java.util.*;
+public class UniqueDigitsInRange
+{
+     public static void main(String []args)
+     {
+        Scanner scan = new Scanner(System.in);
+        int lower = scan.nextInt();
+        scan.nextLine();
+        int upper = scan.nextInt();
+        int count = 0,count2 = 0;
+        for(int i=lower;i<=upper;i++)
+        {
+            count = 0;
+            String str = Integer.toString(i)+" ";
+            for(int j=0;j<str.length()-1;j++)
+            {
+                if(str.charAt(j)==str.charAt(j+1))
+                    continue;
+                else
+                    count++;
+            }
+            if(count!=1)
+                count2++;
+        }
+        System.out.println(count2);
+     }
+}
