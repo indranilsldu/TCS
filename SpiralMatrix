@@ -1,0 +1,55 @@
+import java.util.*;
+public class SpiralMatrix
+{
+     public static void main(String []args)
+     {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the no. of rows and columns");
+        int down = scan.nextInt();
+        int right = scan.nextInt();
+        scan.nextLine();
+        int i,j,up=0,left=0;
+        int arr[][] = new int[down][right];
+        System.out.println("Enter the elements one by one");
+        for(i=0;i<down;i++)
+        {
+            for(j=0;j<right;j++)
+            {
+                arr[i][j] = scan.nextInt();
+                scan.nextLine();
+            }
+        }
+        for(i=0;i<down;i++)
+        {
+            for(j=0;j<right;j++)
+            {
+                System.out.print(arr[j]);
+            }
+            System.out.println();
+        }
+        System.out.println("Elements in spiral order are:\n");
+        while(left<=right && up<=down)
+        {
+            for(i=left;i<right;i++)
+            {
+                System.out.print(arr[up][i]+" ");
+                up++;
+            }
+            for(i=up;i<down;i++)
+            {
+                System.out.print(arr[i][right-1]+" ");
+                right--;
+            }
+            for(i=right-1;i>=left;i--)
+            {
+                System.out.print(arr[down-1][i]+" ");
+                down--;
+            }
+            for(i=down-1;i>=up;i--)
+            {
+                System.out.print(arr[i][left]+" ");
+                left++;
+            }
+        }
+     }
+}
