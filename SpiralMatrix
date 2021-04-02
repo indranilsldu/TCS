@@ -19,37 +19,38 @@ public class SpiralMatrix
                 scan.nextLine();
             }
         }
+        System.out.print("Elements in 2D form are:\n");
         for(i=0;i<down;i++)
         {
             for(j=0;j<right;j++)
             {
-                System.out.print(arr[j]);
+                System.out.print(arr[i][j]+" ");
             }
             System.out.println();
         }
-        System.out.println("Elements in spiral order are:\n");
-        while(left<=right && up<=down)
+        System.out.print("Elements in spiral order are:\n");
+        while(left<right && up<down)
         {
             for(i=left;i<right;i++)
             {
                 System.out.print(arr[up][i]+" ");
-                up++;
             }
+            up++;
             for(i=up;i<down;i++)
             {
                 System.out.print(arr[i][right-1]+" ");
-                right--;
             }
+            right--;
             for(i=right-1;i>=left;i--)
             {
                 System.out.print(arr[down-1][i]+" ");
-                down--;
             }
+            down--;
             for(i=down-1;i>=up;i--)
             {
                 System.out.print(arr[i][left]+" ");
-                left++;
             }
+            left++;
         }
      }
 }
