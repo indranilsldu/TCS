@@ -1,0 +1,27 @@
+import java.util.*;
+public class TargetValue
+{
+     public static void main(String []args)
+     {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the no. of elements");
+        int n = scan.nextInt();
+        System.out.println("Enter the target element");
+        int target = scan.nextInt();
+        scan.nextLine();
+        int i,j,count=0;
+        int arr[] = new int[n];
+        System.out.println("Enter the elements one by one");
+        for(i=0;i<n;i++)
+        {
+            arr[i] = scan.nextInt();
+            scan.nextLine();
+        }
+        for(i=0;i<n-1;i++)
+        {
+            if(Math.abs(arr[i]-arr[i+1])==target)
+                count++;
+        }
+        System.out.println(count);
+     }
+}
