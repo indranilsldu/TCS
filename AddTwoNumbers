@@ -1,0 +1,20 @@
+import java.util.*;
+public class AddTwoNumbers
+{
+    public static void main(String []args)
+    {
+        try
+        {
+            Scanner scan = new Scanner(System.in);
+            int i = scan.nextInt();
+            scan.nextLine();
+            float f = scan.nextFloat();
+            float sum = i+f;
+            System.out.printf("%.2f",sum);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Error! Enter numeric values only");
+        }
+    }
+}
