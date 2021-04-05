@@ -1,0 +1,38 @@
+import java.util.*;
+public class BinarySearch
+{
+     public static void main(String args[])
+     {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the range: ");
+        int n = scan.nextInt();
+        int arr[] = new int[n];
+        int i,lb=0,ub=n-1,mid=0,flag=0;
+        System.out.println("Enter the array elements one by one");
+        for(i=0;i<n;i++)
+        {
+            arr[i] = scan.nextInt();
+        }
+        scan.nextLine();
+        Arrays.sort(arr);
+        System.out.print("Enter the number to be searched: ");
+        int num = scan.nextInt();
+        while(lb<=ub)
+        {
+            mid=(lb+ub)/2;
+            if(arr[mid]==num)
+            {
+                flag = 1;
+                break;
+            }
+            else if(num<arr[mid])
+                ub = mid-1;
+            else
+                lb = mid+1;
+        }
+        if(flag==0)
+            System.out.print("Number not present in array");
+        else
+            System.out.print("Number present in array");
+     }
+}
