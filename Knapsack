@@ -1,0 +1,26 @@
+import java.util.*;
+public class Knapsack
+{
+     public static void main(String rgs[])
+     {
+        int n=4,W=10;
+        int wt[] = {2,3,5,7};
+        int val[] = {1,2,3,4};
+        System.out.println("Maximum marks: "+knapSack(wt,val,n,W));
+     }
+     public static int knapSack(int wt[],int val[],int n,int W)
+     {
+         if(n==0 || W==0)
+         {
+             return 0;
+         }
+         if(wt[n-1]>W)
+         {
+             return knapSack(wt,val,n-1,W);
+         }
+         else
+         {
+             return Math.max(val[n-1]+knapSack(wt,val,n-1,W-wt[n-1]),knapSack(wt,val,n-1,W));
+         }
+     }
+}
