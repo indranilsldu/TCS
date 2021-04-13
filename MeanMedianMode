@@ -1,0 +1,18 @@
+import java.util.*;
+public class MeanMedianMode
+{
+     public static void main(String args[])
+     {
+        int arr[] = {18,30,48,48,48,50,50,60,60,60,70,80,80,80,80};
+        double mean = 0, median = 0;
+        int mode = 0, sum = 0, max = 0, c = 0;
+        int len = arr.length;
+        for(i=0;i<len;i++)
+        {
+            sum = sum+arr[i];
+        }
+        mean = (double)sum/len;
+        System.out.println("Mean= "+mean);
+        Arrays.sort(arr);
+     }
+}
