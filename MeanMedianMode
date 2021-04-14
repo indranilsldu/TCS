@@ -3,17 +3,17 @@ public class MeanMedianMode
 {
      public static void main(String args[])
      {
-        int arr[] = {18,30,48,48,48,50,50,60,60,60,70,80,80,80,80};
+        int arr[] = {30,80,18,48,70,80,48,50,48,60,60,50,80,80,60};
         Arrays.sort(arr);
         double mean = 0, median = 0;
-        int mode = 0, sum = 0, max = 0, c = 0;
+        int mode = 0, sum = 0, max = 0, count = 1;
         int len = arr.length;
         for(int i=0;i<len;i++)
         {
             sum = sum+arr[i];
         }
         mean = (double)sum/len;
-        System.out.printf("Mean= %.2f\n",mean);
+        System.out.printf("Mean = %.2f\n",mean);
         if(len%2!=0)
         {
             median = arr[len/2];
@@ -22,6 +22,23 @@ public class MeanMedianMode
         {
             median = (arr[len/2-1]+arr[len/2])/2;
         }
-        System.out.printf("Median= %.2f\n",median);
+        System.out.printf("Median = %.2f\n",median);
+        for(int i=0;i<len-1;i++)
+        {
+            if(arr[i]==arr[i+1])
+            {
+                count++;
+                if(count>max)
+                {
+                    max = count;
+                    mode = arr[i];
+                }
+                else
+                {
+                    count = 0;
+                }
+            }
+        }
+        System.out.println("Mode = "+mode);
      }
 }
