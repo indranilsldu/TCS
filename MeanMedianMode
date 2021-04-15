@@ -33,11 +33,11 @@ public class MeanMedianMode
                     max = count;
                     mode = arr[i];
                 }
-                else
+            }
+            else
                 {
                     count = 0;
                 }
-            }
         }
         System.out.println("Mode = "+mode);
      }
